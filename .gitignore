@@ -1,0 +1,17 @@
+# Dependências e builds
+node_modules/
+dist/
+coverage/
+.cache/
+# Configuração local e segredos
+.env
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.idea/
+*.local
+
+.mysql/
