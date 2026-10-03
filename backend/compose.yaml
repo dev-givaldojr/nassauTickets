@@ -1,0 +1,22 @@
+name: nassautickets
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "127.0.0.1:${DB_PORT:-3307}:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-nassau_tickets}
+      MYSQL_USER: ${DB_USER:-nassau_app}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Configure DB_PASSWORD no .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Configure MYSQL_ROOT_PASSWORD no .env}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 30s
+    restart: unless-stopped
+volumes:
+  mysql_data:

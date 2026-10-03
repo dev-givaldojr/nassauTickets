@@ -1,0 +1,25 @@
+{
+  "name": "nassautickets-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --watch src/server.js",
+    "start": "node --env-file-if-exists=.env src/server.js",
+    "test": "node --test",
+    "db:init": "node --env-file-if-exists=.env scripts/init-db.js",
+    "db:up": "node --env-file-if-exists=.env scripts/local-mysql.js start",
+    "db:stop": "node --env-file-if-exists=.env scripts/local-mysql.js stop",
+    "test:mysql": "node --env-file-if-exists=.env scripts/run-mysql-checks.js",
+    "db:setup": "node --env-file-if-exists=.env scripts/local-mysql.js setup",
+    "db:docker:up": "docker compose up -d --wait",
+    "db:docker:stop": "docker compose stop"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "mysql2": "3.24.5"
+  }
+}

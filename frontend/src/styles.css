@@ -1,0 +1,626 @@
+:root {
+  font-family:
+    Inter,
+    Segoe UI,
+    Arial,
+    sans-serif;
+  color: #183d37;
+  background: #f5f6f2;
+  font-synthesis: none;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+select {
+  font: inherit;
+}
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  background: #194e43;
+  color: white;
+  padding: 14px 22px;
+  font-weight: 600;
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+button:hover:enabled {
+  background: #266b59;
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid #b66423;
+  outline-offset: 4px;
+}
+a {
+  color: inherit;
+}
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+aside {
+  width: 264px;
+  flex-shrink: 0;
+  background: #103d37;
+  color: #f0f5ea;
+  padding: 37px 25px;
+  display: flex;
+  flex-direction: column;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+.brand strong {
+  font-weight: 750;
+}
+.brand small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  margin-top: 7px;
+  color: #c0d2ca;
+}
+.brand-icon {
+  width: 39px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #d7eb94;
+  color: #143d35;
+  font-size: 29px;
+  font-weight: 750;
+}
+.nav-label {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #c0d2ca;
+  margin: 63px 10px 18px;
+}
+nav {
+  display: grid;
+  gap: 9px;
+}
+nav button {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  text-align: left;
+  background: transparent;
+  padding: 16px 13px;
+  color: #d4e2da;
+}
+nav button span {
+  font-size: 11px;
+  opacity: 0.8;
+}
+nav button b {
+  margin-left: auto;
+  font-size: 19px;
+  font-weight: 400;
+}
+nav button.selected {
+  background: #d7eb94;
+  color: #163c32;
+}
+nav button.selected:hover {
+  background: #e4f2bb;
+}
+.sidebar-note {
+  margin-top: auto;
+  padding: 70px 8px 30px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.sidebar-note p {
+  color: #c0d2ca;
+  font-size: 12px;
+  margin-top: 13px;
+}
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #d7eb94;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+aside footer {
+  border-top: 1px solid #376056;
+  padding-top: 23px;
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  display: flex;
+  justify-content: space-between;
+}
+aside footer span {
+  color: #d7eb94;
+}
+main {
+  flex: 1;
+  min-width: 0;
+}
+header {
+  height: 86px;
+  border-bottom: 1px solid #dfe5db;
+  padding: 0 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.slash {
+  color: #9aa99e;
+  margin: 0 12px;
+}
+.connection {
+  color: #326454;
+  font-size: 11px;
+  background: #e7efe2;
+  padding: 8px 12px;
+  border-radius: 20px;
+}
+.offline {
+  background: #f8e4db;
+  color: #883f28;
+}
+.content {
+  max-width: 1300px;
+  margin: auto;
+  padding: 28px 46px 20px;
+}
+.notice {
+  font-size: 10px;
+  color: #5b6d61;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.notice span {
+  color: #6f7a72;
+}
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 54px 0 45px;
+  gap: 20px;
+}
+.eyebrow {
+  font-size: 10px !important;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  color: #526d58 !important;
+  margin-bottom: 16px !important;
+}
+h1 {
+  font-size: clamp(28px, 2.8vw, 43px);
+  font-weight: 600;
+  letter-spacing: -1.8px;
+  line-height: 1.12;
+  margin: 0 0 18px;
+}
+.page-heading p {
+  color: #657369;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+.heading-symbol {
+  font-size: 87px;
+  font-family: Georgia, serif;
+  color: #83a57a;
+  padding-right: 9px;
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+.section-title h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+.section-title > span {
+  font-size: 10px;
+  color: #6e7e72;
+}
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+.ticket-card {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 23px;
+  min-height: 256px;
+  color: #173e34;
+  background: white;
+  border: 1px solid #dbe1d7;
+  border-radius: 15px;
+  font-weight: 400;
+}
+.ticket-card:hover:enabled {
+  background: #edf4e4;
+  transform: translateY(-3px);
+}
+.ticket-card.sp {
+  background: #eaf0df;
+}
+.type-tag {
+  background: #fff9;
+  align-self: flex-start;
+  border: 1px solid #c6d3bd;
+  border-radius: 7px;
+  padding: 8px 11px;
+  font-size: 13px;
+  font-weight: 750;
+}
+.ticket-card.se .type-tag {
+  background: #edf2f2;
+  border-color: #d6e3e3;
+  color: #3d6570;
+}
+.ticket-card.sg .type-tag {
+  background: #f8efdf;
+  border-color: #eee0c7;
+  color: #82652b;
+}
+.ticket-card h3 {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.45px;
+  margin: 25px 0 10px;
+}
+.ticket-card p {
+  font-size: 12px;
+  color: #607161;
+  line-height: 1.65;
+  margin: 0 0 26px;
+}
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid #dce4d5;
+  font-size: 10px;
+}
+.card-bottom strong {
+  font-size: 11px;
+}
+.guide {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: 17px;
+  align-items: center;
+  border: 1px solid #dce2d8;
+  border-radius: 13px;
+  margin-top: 28px;
+  padding: 25px;
+  background: #f1f3ed;
+}
+.guide-number {
+  display: grid;
+  place-items: center;
+  background: #e2e8da;
+  border-radius: 50%;
+  height: 34px;
+  width: 34px;
+  font-size: 11px;
+}
+.guide h3 {
+  margin: 0 0 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.guide p {
+  margin: 0;
+  color: #69796a;
+  font-size: 11px;
+}
+.bottom-note {
+  margin-top: 52px;
+  border-top: 1px solid #dce2d8;
+  padding-top: 18px;
+  color: #617063;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  gap: 15px;
+}
+.error {
+  padding: 15px;
+  background: #fbe8de;
+  border: 1px solid #ebc1ac;
+  color: #77331d;
+  border-radius: 10px;
+  margin-top: 18px;
+  line-height: 1.5;
+  font-size: 13px;
+}
+.receipt {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 14px;
+  background: #e0edca;
+}
+.receipt div {
+  display: grid;
+  gap: 9px;
+}
+.receipt small {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+.receipt strong {
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+.receipt span {
+  font-size: 12px;
+}
+.secondary {
+  background: white;
+  color: #214d3d;
+  border: 1px solid #b8cbb6;
+}
+.secondary:hover:enabled {
+  background: #edf4e4;
+}
+.work-card {
+  background: white;
+  border: 1px solid #dbe1d7;
+  border-radius: 15px;
+  padding: 32px;
+}
+.work-card p {
+  font-size: 14px;
+  color: #647166;
+  line-height: 1.5;
+}
+.desk-label {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 35px;
+  font-size: 13px;
+}
+select {
+  padding: 12px;
+  border: 1px solid #c2d0bd;
+  border-radius: 9px;
+  background: white;
+  color: #214d3d;
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.current-ticket {
+  font-size: 40px;
+  margin: 10px 0;
+}
+.panel-current {
+  text-align: center;
+  background: #143f37;
+  color: #f5f9ef;
+  border-radius: 16px;
+  padding: 42px 20px;
+}
+.panel-current p {
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #d7eb94;
+}
+.panel-current h2 {
+  font-size: clamp(26px, 4.5vw, 64px);
+  margin: 20px 0;
+  overflow-wrap: anywhere;
+}
+.panel-current span {
+  font-size: 24px;
+  color: #d7eb94;
+}
+.history-title {
+  font-size: 16px;
+  margin-top: 30px;
+}
+.history {
+  display: grid;
+  gap: 9px;
+}
+.history > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  background: white;
+  border: 1px solid #dbe1d7;
+  border-radius: 9px;
+}
+.history span {
+  font-size: 13px;
+}
+.history small {
+  font-size: 11px;
+  color: #63715e;
+}
+@media (min-width: 1500px) {
+  .content {
+    padding-top: 40px;
+  }
+  .page-heading {
+    margin-top: 70px;
+  }
+  .ticket-card {
+    min-height: 300px;
+  }
+}
+@media (max-width: 1100px) {
+  aside {
+    width: 220px;
+    padding: 30px 18px;
+  }
+  .brand {
+    font-size: 17px;
+  }
+  .brand small {
+    font-size: 7px;
+  }
+  header {
+    padding: 0 28px;
+  }
+  .content {
+    padding: 25px 28px;
+  }
+  .ticket-grid {
+    gap: 12px;
+  }
+  .ticket-card {
+    padding: 20px 16px;
+  }
+  .ticket-card h3 {
+    font-size: 16px;
+  }
+  .card-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .heading-symbol {
+    font-size: 60px;
+  }
+}
+@media (max-width: 760px) {
+  .app-shell {
+    display: block;
+  }
+  aside {
+    width: 100%;
+    padding: 18px;
+  }
+  .brand {
+    font-size: 20px;
+  }
+  .brand small {
+    font-size: 8px;
+  }
+  .nav-label,
+  .sidebar-note,
+  aside footer {
+    display: none;
+  }
+  nav {
+    display: flex;
+    margin-top: 19px;
+    gap: 7px;
+  }
+  nav button {
+    flex: 1;
+    padding: 12px 10px;
+    justify-content: center;
+    font-size: 12px;
+  }
+  nav button b {
+    display: none;
+  }
+  header {
+    height: 60px;
+    padding: 0 20px;
+  }
+  .content {
+    padding: 22px 20px;
+  }
+  .page-heading {
+    margin: 32px 0;
+  }
+  .heading-symbol {
+    display: none;
+  }
+  h1 {
+    letter-spacing: -1px;
+  }
+  .notice {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+  .ticket-card {
+    min-height: 200px;
+    padding: 22px;
+  }
+  .ticket-card h3 {
+    margin-top: 16px;
+    font-size: 20px;
+  }
+  .card-bottom {
+    flex-direction: row;
+  }
+  .guide {
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+  }
+  .receipt {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .receipt strong {
+    font-size: 27px;
+  }
+  .bottom-note {
+    margin-top: 34px;
+    flex-direction: column;
+  }
+  .history > div {
+    flex-wrap: wrap;
+  }
+  .history small {
+    flex-basis: 100%;
+  }
+  .work-card {
+    padding: 22px;
+  }
+  .current-ticket {
+    font-size: 28px;
+  }
+}
